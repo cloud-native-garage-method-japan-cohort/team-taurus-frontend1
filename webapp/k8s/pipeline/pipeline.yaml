@@ -93,7 +93,7 @@ spec:
           workspace: pipeline-shared-data
       params:
         - name: app-namespace
-          value: team-gemini
-          # value: team-team-taurus1
+          #value: team-gemini
+          value: team-taurus1
         - name: app-name
           value: team-taurus-frontend1
