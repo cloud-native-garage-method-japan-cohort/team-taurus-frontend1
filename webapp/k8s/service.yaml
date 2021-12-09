@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: team-gemini-frontend
-    app.kubernetes.io/instance: team-gemini-frontend
-    app.kubernetes.io/name: team-gemini-frontend
-  name: team-gemini-frontend
+    app: team-taurus-frontend1
+    app.kubernetes.io/instance: team-taurus-frontend1
+    app.kubernetes.io/name: team-taurus-frontend1
+  name: team-taurus-frontend1
 spec:
   ports:
     - name: http
@@ -13,7 +13,7 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app.kubernetes.io/instance: team-gemini-frontend
-    app.kubernetes.io/name: team-gemini-frontend
+    app.kubernetes.io/instance: team-taurus-frontend1
+    app.kubernetes.io/name: team-taurus-frontend1
   sessionAffinity: None
   type: ClusterIP

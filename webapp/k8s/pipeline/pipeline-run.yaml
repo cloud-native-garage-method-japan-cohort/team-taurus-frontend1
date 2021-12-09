@@ -1,13 +1,13 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: team-gemini-frontend-pipeline-run-
+  generateName: team-taurus-frontend1-pipeline-run-
 spec:
   serviceAccountName: build-bot-frontend
   pipelineRef:
-    name: team-gemini-frontend-pipeline
+    name: team-taurus-frontend1-pipeline
   workspaces:
     - name: pipeline-shared-data
       persistentVolumeClaim:
-        claimName: team-gemini-pvc
+        claimName: team-taurus1-pvc
 

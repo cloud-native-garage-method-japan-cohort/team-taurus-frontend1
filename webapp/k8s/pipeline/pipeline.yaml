@@ -3,7 +3,7 @@ kind: Pipeline
 metadata:
   annotations:
     app.openshift.io/runtime: nodejs
-  name: team-gemini-frontend-pipeline
+  name: team-taurus-frontend1-pipeline
 spec:
   workspaces:
     - name: pipeline-shared-data
@@ -13,12 +13,12 @@ spec:
     - name: image-repo
       type: string
       description: Docker image name
-      default: quay.io/yu_yamanaka_ibm/team-gemini-frontend
+      default: quay.io/tokinori_shimodaira_ibm/team-taurus-frontend1
   tasks:
     - name: clone-repository
       params:
         - name: url
-          value: https://github.com/cloud-native-garage-method-japan-cohort/team-gemini.git
+          value: https://github.com/cloud-native-garage-method-japan-cohort/team-taurus-frontend1.git
       taskRef:
         kind: Task
         name: git-clone
@@ -81,8 +81,7 @@ spec:
           workspace: pipeline-shared-data
       params:
         - name: image-with-tag
-          #value: "quay.io/dotnsf/express-sample-app=$(params.image-repo):$(tasks.clone-repository.results.commit)"
-          value: "quay.io/yu_yamanaka_ibm/team-gemini-frontend=$(params.image-repo):latest"
+          value: "quay.io/tokinori_shimodaira_ibm/team-taurus-frontend1=$(params.image-repo):latest"
     - name: test-deploy-frontend
       runAfter:
         - kustomize-build-frontend
@@ -95,5 +94,6 @@ spec:
       params:
         - name: app-namespace
           value: team-gemini
+          # value: team-team-taurus1
         - name: app-name
-          value: team-gemini-frontend
+          value: team-taurus-frontend1
