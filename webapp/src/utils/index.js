@@ -12,9 +12,8 @@ const api = axios.create({
   responseType: 'json',
 })
 
-export const queryDiscovery = async (searchText, category) => {
+export const queryDiscovery = async (searchText) => {
   return await api.post('/discovery/search', {
-    searchText: searchText,
-    category,
+    searchText: searchText
   })
 }
