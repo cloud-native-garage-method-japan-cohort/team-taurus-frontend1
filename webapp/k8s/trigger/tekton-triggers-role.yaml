@@ -43,7 +43,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: tekton-triggers-sa
-    namespace: team-gemini
+    namespace: team-taurus1
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -53,7 +53,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: tekron-triggers-role-cl
-  namespace: team-gemini
+  namespace: team-taurus1
 rules:
   - apiGroups:
       - triggers.tekton.dev
@@ -69,11 +69,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: tekron-triggers-rolebinding-cl
-  namespace: team-gemini
+  namespace: team-taurus1
 subjects:
   - kind: ServiceAccount
     name: tekton-triggers-sa
-    namespace: team-gemini
+    namespace: team-taurus1
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

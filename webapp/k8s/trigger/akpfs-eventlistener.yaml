@@ -6,6 +6,6 @@ spec:
   serviceAccountName: tekton-triggers-sa
   triggers:
     - bindings:
-        - ref: team-gemini-pipeline-triggerbinding
+        - ref: team-taurus1-pipeline-triggerbinding
       template:
-        ref: team-gemini-triggertemplate
+        ref: team-taurus1-triggertemplate

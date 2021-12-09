@@ -1,31 +1,31 @@
 apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
-  name: team-gemini-triggertemplate
+  name: team-taurus1-triggertemplate
 spec:
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
-        generateName: team-gemini-frontend-pipeline-run-
+        generateName: team-taurus-frontend1-pipeline-run-
       spec:
         serviceAccountName: build-bot-frontend
         pipelineRef:
-          name: team-gemini-frontend-pipeline
+          name: team-taurus-frontend1-pipeline
         workspaces:
           - name: pipeline-shared-data
             persistentVolumeClaim:
-              claimName: team-gemini-pvc
+              claimName: team-taurus1-pvc
               # 最終型はfrontendとbackend両方トリガーする
               # https://github.com/tektoncd/triggers/issues/801
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
-        generateName: gemini-backend-pipeline-run-
+        generateName: team-taurus1-backend-pipeline-run-
       spec:
         serviceAccountName: build-bot
         pipelineRef:
-          name: gemini-backend-pipeline
+          name: team-taurus1-backend-pipeline
         workspaces:
           - name: pipeline-shared-data
             persistentVolumeClaim:

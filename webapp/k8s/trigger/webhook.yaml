@@ -4,5 +4,5 @@ metadata:
   name: webhook-secret
 stringData:
   token: 
-  secret: team-gemini-gh-pat
+  secret: team-taurus1-gh-pat
 
