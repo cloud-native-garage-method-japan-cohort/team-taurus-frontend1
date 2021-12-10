@@ -40,24 +40,24 @@ spec:
             - clean-install
         - name: PATH_CONTEXT
           value: "webapp"
-    - name: run-tests
-      runAfter:
-        - install-dependencies
-      taskRef:
-        kind: Task
-        name: npm
-      workspaces:
-        - name: source
-          workspace: pipeline-shared-data
-      params:
-        - name: ARGS
-          value: 
-            - test
-        - name: PATH_CONTEXT
-          value: "webapp"
+    # - name: run-tests
+    #   runAfter:
+    #     - install-dependencies
+    #   taskRef:
+    #     kind: Task
+    #     name: npm
+    #   workspaces:
+    #     - name: source
+    #       workspace: pipeline-shared-data
+    #   params:
+    #     - name: ARGS
+    #       value: 
+    #         - test
+    #     - name: PATH_CONTEXT
+    #       value: "webapp"
     - name: build-image
       runAfter:
-        - run-tests
+        - install-dependencies
       taskRef:
         kind: Task
         name: buildah
