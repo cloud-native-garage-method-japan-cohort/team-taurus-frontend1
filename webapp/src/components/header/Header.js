@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className={Style.header}>
       <div className={Style.item}>
-        <Link to='/'> Proteinくん </Link>      
+        <Link to='/'> Protein　くん </Link>      
       </div>
     </div>
   )
